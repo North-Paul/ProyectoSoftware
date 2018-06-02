@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Oferta {
 
-	private static Oferta o;
+	private static Oferta oferta;
 	private int id;
 	private String nOferta;
 	
@@ -17,14 +17,14 @@ public class Oferta {
 	private Oferta (int id, String nombre) {
 		this.id = id;
 		nOferta = nombre;
-		System.out.println("La empresa "+this.id+" ha creado la oferta: "+nombre);
+		System.out.println("A la oferta ->"+nOferta+"<- se le ha asignado el id: "+this.id);
 	}
 	
 	public static Oferta crearOferta (int id, String nombre){
-		if(o == null){
-			o = new Oferta(id, nombre);
+		if(oferta == null){
+			oferta = new Oferta(id, nombre);
 		}
-		return o;
+		return oferta;
 	}
 	public String getNombre (){
 		return nOferta;

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Demanda {
 
-	private static Demanda u;
+	private static Demanda dem;
 	private int id;
 	private String nombre;
 	
@@ -17,14 +17,14 @@ public class Demanda {
 	private Demanda (int id, String nom) {
 		this.id = id;
 		nombre = nom;
-		System.out.println("El usuario "+nombre+" con id "+id+", ha emitido una nueva demanda");
+		System.out.println("El usuario "+nombre+" ha emitido una nueva demanda, cuyo id es "+id);
 	}
 	
 	public static Demanda crearUsuario (int id, String nom){
-		if(u == null){
-			u = new Demanda(id, nom);
+		if(dem == null){
+			dem = new Demanda(id, nom);
 		}
-		return u;
+		return dem;
 	}
 	public int getId (){
 		return id;
