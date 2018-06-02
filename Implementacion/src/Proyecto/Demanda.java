@@ -4,39 +4,37 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Oferta {
+public class Demanda {
 
-	private static Oferta o;
+	private static Demanda u;
 	private int id;
-	private String nOferta;
+	private String nombre;
 	
 	private int anyoExperiencia=0;
 	private List<Boolean> lenguajesP = new ArrayList<Boolean>();
 	private List<Boolean> idiomas = new ArrayList<Boolean>();
 	
-	private Oferta (int id, String nombre) {
+	private Demanda (int id, String nom) {
 		this.id = id;
-		nOferta = nombre;
-		System.out.println("La empresa "+this.id+" ha creado la oferta: "+nombre);
+		nombre = nom;
+		System.out.println("El usuario "+nombre+" con id "+id+", ha emitido una nueva demanda");
 	}
 	
-	public static Oferta crearOferta (int id, String nombre){
-		if(o == null){
-			o = new Oferta(id, nombre);
+	public static Demanda crearUsuario (int id, String nom){
+		if(u == null){
+			u = new Demanda(id, nom);
 		}
-		return o;
+		return u;
 	}
-	public String getNombre (){
-		return nOferta;
+	public int getId (){
+		return id;
 	}
-	
 	public void setExperiencia ( int experiencia){
 		anyoExperiencia = experiencia;
 	}
 	public int getExperiencia (){
 		return anyoExperiencia;
 	}
-	
 	public void setLenguajes (List<Boolean> l){
 		Iterator<Boolean> it = l.iterator();
 		boolean aux1;

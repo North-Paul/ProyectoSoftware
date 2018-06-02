@@ -9,10 +9,10 @@ public class main {
 		// TODO Auto-generated method stub
 		
 		int idEmpresa=101, idUsuario=7007;
-		Usuario u = Usuario.crearUsuario(idUsuario, "Paquito Perez");
+		Demanda d = Demanda.crearUsuario(idUsuario, "Paquito Perez");
 		Oferta o = Oferta.crearOferta(idEmpresa, "Proyecto Software");
 		
-		u.setExperiencia(2);
+		d.setExperiencia(3);
 		o.setExperiencia(4);
 		
 		List<Boolean> lenguajesO = new ArrayList<Boolean>();
@@ -21,18 +21,18 @@ public class main {
 		lenguajesO.add(true);
 		o.setLenguajes(lenguajesO);
 		List<Boolean> lenguajesU = new ArrayList<Boolean>();
-		lenguajesU.add(true);
+		lenguajesU.add(false);
 		lenguajesU.add(false);
 		lenguajesU.add(true);
-		u.setLenguajes(lenguajesU);
+		d.setLenguajes(lenguajesU);
 		
 		List<Boolean> idiomas = new ArrayList<Boolean>();
 		idiomas.add(true);
 		idiomas.add(false);
-		u.setIdiomas(idiomas);
+		d.setIdiomas(idiomas);
 		o.setIdiomas(idiomas);
 		
-		Propuesta p = new Propuesta(u,o);
+		Propuesta p = new Propuesta(d,o);
 	}
 
 }

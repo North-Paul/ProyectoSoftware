@@ -4,14 +4,22 @@ import java.util.Iterator;
 
 public class Propuesta {
 
-	private Usuario us;
+	private Demanda dem;
 	private Oferta o;
 	private double total=0;
 	private double contador=0;
 	private double puntuacion;
 	
-	public Propuesta (Usuario u, Oferta ofer){
-		us=u;
+	private final int PONDERACION_IDIOMAS = 5;
+	private final int PONDERACION_EXPERIENCIA = 6;
+	private final int PONDERACION_LENGUAJESP = 8;
+	
+	// Debido a que a la hora de asignar a un programador, hay requisitos que no son tan 
+	// importantes como otros, hemos asignado el orden de importancia:
+	// lenguajeProgramacion > añosExperienza > idiomas
+	
+	public Propuesta (Demanda d, Oferta ofer){
+		dem=d;
 		o=ofer;
 		
 		anyoExperiencia();
@@ -20,54 +28,54 @@ public class Propuesta {
 		
 		puntuacion=(10*contador)/total;
 		
-		System.out.println("Al usuario "+us.getId()+" se le ha asignado una puntuacion en el proyecto ->"+o.getNombre()+"<- de: "+puntuacion);
+		System.out.println("Al usuario "+dem.getId()+" se le ha asignado una puntuacion en el proyecto ->"+o.getNombre()+"<- de: "+puntuacion);
 	}
 	
-	// Debido a que a la hora de asignar a un programador, hay requisitos que no son tan 
-	// importantes como otros, hemos asignado el orden de importancia:
-	// lenguajeProgramacion > añosExperienza > idiomas
+	// El calculo de la puntucion la realizaremos la suma acumulada de requisitos exigidos en la
+	// oferta y la suma de los requisitos los cuales cumple el usuario. Una vez obtenidos
+	// estos valores, realizamos una simple regla de 3 para obtener una puntuación sobre 10.
 	
 	private void idiomas() {
-		Iterator<Boolean> itUsuario = us.getIdiomas().iterator();
+		Iterator<Boolean> itUsuario = dem.getIdiomas().iterator();
 		Iterator<Boolean> itOferta = o.getIdiomas().iterator();
 		boolean aux1, aux2;
 		while(itOferta.hasNext()){
 			aux1 = itOferta.next();
 			aux2 = itUsuario.next();
 			if(aux1==true){
-				total = total+5;
+				total = total+PONDERACION_IDIOMAS;
 				if(aux2==true){
-					contador = contador+5;
+					contador = contador+PONDERACION_IDIOMAS;
 				}
 			}
 		}
 	}
 	
 	private void lenguajesProgramacion() {
-		Iterator<Boolean> itUsuario = us.getLenguajes().iterator();
+		Iterator<Boolean> itUsuario = dem.getLenguajes().iterator();
 		Iterator<Boolean> itOferta = o.getLenguajes().iterator();
 		boolean aux1, aux2;
 		while(itOferta.hasNext()){
 			aux1 = itOferta.next();
 			aux2 = itUsuario.next();
 			if(aux1==true){
-				total = total+8;
+				total = total+PONDERACION_LENGUAJESP;
 				if(aux2==true){
-					contador = contador+8;
+					contador = contador+PONDERACION_LENGUAJESP;
 				}
 			}
 		}
 	}
 
 	private void anyoExperiencia() {
-		int diferencia=us.getExperiencia()-o.getExperiencia();
+		int diferencia=dem.getExperiencia()-o.getExperiencia();
 		total=total+6;
 		if(diferencia>=0){
-			contador=contador+6;
+			contador=contador+PONDERACION_EXPERIENCIA;
 		}else if(diferencia<0 && diferencia>-2){
-			contador=contador+4;
+			contador=contador+PONDERACION_EXPERIENCIA-2;
 		}else if(diferencia<0 && diferencia>-4){
-			contador=contador+2;
+			contador=contador+PONDERACION_EXPERIENCIA-4;
 		}
 	}
 }
