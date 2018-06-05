@@ -20,7 +20,7 @@ public class Demanda {
 		System.out.println("El usuario "+nombre+" ha emitido una nueva demanda, cuyo id es "+id);
 	}
 	
-	public static Demanda crearUsuario (int id, String nom){
+	public static Demanda crearDemanda (int id, String nom){
 		if(dem == null){
 			dem = new Demanda(id, nom);
 		}
@@ -29,8 +29,12 @@ public class Demanda {
 	public int getId (){
 		return id;
 	}
-	public void setExperiencia ( int experiencia){
-		anyoExperiencia = experiencia;
+	public void setExperiencia ( int experiencia) throws Exception{
+		if(experiencia >= 0){
+			anyoExperiencia = experiencia;
+		}else{
+			throw new Exception ("Experiencia "+experiencia+" incorrecta");
+		}
 	}
 	public int getExperiencia (){
 		return anyoExperiencia;

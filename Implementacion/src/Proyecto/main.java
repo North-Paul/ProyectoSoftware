@@ -5,14 +5,14 @@ import java.util.List;
 
 public class main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		
-		int idEmpresa=101, idUsuario=7007;
-		Demanda d = Demanda.crearUsuario(idUsuario, "Paquito Perez");
-		Oferta o = Oferta.crearOferta(idEmpresa, "Proyecto Software");
+		int idOferta=101, idDemanda=7007;
+		Demanda d = Demanda.crearDemanda(idDemanda, "Paquito Perez");
+		Oferta o = Oferta.crearOferta(idOferta, "Proyecto Software");
 		
-		d.setExperiencia(3);
+		d.setExperiencia(4);
 		o.setExperiencia(4);
 		
 		List<Boolean> lenguajesO = new ArrayList<Boolean>();
@@ -21,7 +21,7 @@ public class main {
 		lenguajesO.add(true);
 		o.setLenguajes(lenguajesO);
 		List<Boolean> lenguajesU = new ArrayList<Boolean>();
-		lenguajesU.add(false);
+		lenguajesU.add(true);
 		lenguajesU.add(false);
 		lenguajesU.add(true);
 		d.setLenguajes(lenguajesU);

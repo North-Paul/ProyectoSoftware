@@ -30,8 +30,12 @@ public class Oferta {
 		return nOferta;
 	}
 	
-	public void setExperiencia ( int experiencia){
-		anyoExperiencia = experiencia;
+	public void setExperiencia ( int experiencia) throws Exception{
+		if(experiencia >= 0){
+			anyoExperiencia = experiencia;
+		}else{
+			throw new Exception ("Experiencia "+experiencia+" incorrecta");
+		}
 	}
 	public int getExperiencia (){
 		return anyoExperiencia;

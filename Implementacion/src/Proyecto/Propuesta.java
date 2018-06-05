@@ -6,8 +6,8 @@ public class Propuesta {
 
 	private Demanda dem;
 	private Oferta o;
-	private double total=0;
-	private double contador=0;
+	private double total;
+	private double contador;
 	private double puntuacion;
 	
 	private final int PONDERACION_IDIOMAS = 5;
@@ -25,10 +25,15 @@ public class Propuesta {
 	 * grado de compatibilidad.
 	*/
 	
-	public Propuesta (Demanda d, Oferta ofer){
+	public Propuesta (Demanda d, Oferta ofer) throws Exception{
+		total=0;
+		contador=0;
+	 	puntuacion=0;
 		dem=d;
-		o=ofer;
-		
+		o=ofer;	
+		if(dem.getIdiomas().size() != o.getIdiomas().size() || dem.getLenguajes().size() != o.getLenguajes().size()){
+			throw new Exception ("Las listas deben tener el mismo tamaño para ser comparadas");
+		}
 		anyoExperiencia();
 		lenguajesProgramacion();
 		idiomas();
@@ -38,10 +43,9 @@ public class Propuesta {
 		System.out.println("Al usuario "+dem.getId()+" se le ha asignado una puntuacion en el proyecto ->"+o.getNombre()+"<- de: "+puntuacion);
 	}
 	
-	// El calculo de la puntucion la realizaremos mediante la suma acumulada de requisitos exigidos
-	// en la oferta (almacenado en la variable total) y la suma de los requisitos los cuales 
-	// cumple el usuario (almacenado en contador). Una vez obtenidos dichos valores, realizamos
-	// una simple regla de 3 para obtener una puntuaciï¿½n sobre 10.
+	public double getPuntuacion (){
+		return puntuacion;
+	}
 	
 	private void idiomas() {
 		Iterator<Boolean> itDemanda = dem.getIdiomas().iterator();
