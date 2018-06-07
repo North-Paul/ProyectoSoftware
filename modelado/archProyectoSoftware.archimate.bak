@@ -14,7 +14,7 @@
     <element xsi:type="archimate:BusinessFunction" name="Realizar Valoraciones" id="4d8d5dbb-da7c-40c3-a74d-d22c3320a64e"/>
     <element xsi:type="archimate:BusinessFunction" name="Tomar Decisiones" id="517bcbd6-199b-47bb-bddd-aee58ec4854d"/>
     <element xsi:type="archimate:BusinessFunction" name="Rellenar Perfil" id="cd538820-b691-44b2-a581-f38d274a88ed"/>
-    <element xsi:type="archimate:BusinessRole" name="Moderador" id="8eed3999-8cc6-4f9a-b972-356e3060c811"/>
+    <element xsi:type="archimate:BusinessRole" name="Administrador" id="8eed3999-8cc6-4f9a-b972-356e3060c811"/>
     <element xsi:type="archimate:BusinessFunction" name="Validar los datos" id="52be9382-79a7-4cae-a06c-f2ba7bfcdaff"/>
   </folder>
   <folder name="Application" id="c509bc70-8802-4267-aec2-faccf9c03ba4" type="application">
