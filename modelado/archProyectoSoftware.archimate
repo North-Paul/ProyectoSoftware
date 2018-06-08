@@ -23,6 +23,7 @@
     <element xsi:type="archimate:BusinessFunction" name="Realizar Ofertas" id="9fbf0bcd-8702-4ccd-b804-25cefa6220bc"/>
     <element xsi:type="archimate:BusinessFunction" name="Aceptar o Denegar" id="4c86917b-8d37-4609-b6c7-1dddfa1ded5a"/>
     <element xsi:type="archimate:BusinessFunction" name="Realizar Demandas" id="6db60e0c-2bb9-45e5-b117-bd74278aae50"/>
+    <element xsi:type="archimate:BusinessService" name="Vincular Ofertas de Empleo con Peticiones de Trabajo" id="f8208197-592e-4349-a664-9034f0b0422b"/>
   </folder>
   <folder name="Application" id="c509bc70-8802-4267-aec2-faccf9c03ba4" type="application">
     <element xsi:type="archimate:ApplicationEvent" name="Application Event" id="5a077299-339e-4167-9721-90644949b641"/>
@@ -254,6 +255,7 @@ Es importante encontrar a personal con los conocimientos necesarios para cubrir 
     <element xsi:type="archimate:SpecializationRelationship" id="985ca46c-63fe-4dd6-af44-84c594ebd9ad" source="16bf78a9-f9d6-4eae-a2ac-ca0eb380ca60" target="6db60e0c-2bb9-45e5-b117-bd74278aae50"/>
     <element xsi:type="archimate:SpecializationRelationship" id="0fd7a180-bf5d-4e04-84cd-4ee0d9fedbf2" source="16bf78a9-f9d6-4eae-a2ac-ca0eb380ca60" target="4c86917b-8d37-4609-b6c7-1dddfa1ded5a"/>
     <element xsi:type="archimate:SpecializationRelationship" id="91f4bd21-e21c-4ecd-8ad4-de80710da3ae" source="16bf78a9-f9d6-4eae-a2ac-ca0eb380ca60" target="a00e411d-73a9-4ae6-afc6-edb922700853"/>
+    <element xsi:type="archimate:RealizationRelationship" id="6510e590-8920-4013-b33f-a8f49ac18bf7" source="4ee4f433-62e1-486b-a37e-ccfedb4f964d" target="f8208197-592e-4349-a664-9034f0b0422b"/>
   </folder>
   <folder name="Views" id="4d09ac05-c682-4781-9804-3250e6f662b1" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="Motivación" id="a02ae1df-ab21-4813-9401-9640feb48a6e">
@@ -522,7 +524,7 @@ Es importante encontrar a personal con los conocimientos necesarios para cubrir 
     </element>
     <element xsi:type="archimate:ArchimateDiagramModel" name="Proceso" id="28d0de40-650c-4d6f-89ad-270170564587">
       <child xsi:type="archimate:DiagramObject" id="52336fd8-8cb3-4db0-8780-f7087eeae32a" targetConnections="116bedf4-78af-4dd2-b618-a799134d0a03 3b39f0e2-f239-4435-9df1-690ed9069442" archimateElement="4ee4f433-62e1-486b-a37e-ccfedb4f964d">
-        <bounds x="276" y="12" width="865" height="361"/>
+        <bounds x="264" y="168" width="865" height="361"/>
         <sourceConnection xsi:type="archimate:Connection" id="6c3585ab-66c5-449c-9924-faa2a2dae239" source="52336fd8-8cb3-4db0-8780-f7087eeae32a" target="b783df19-d43b-42ab-94d3-2238ddf92d0f" archimateRelationship="f2cc1dc1-be69-4595-a007-eed3cc6b4cc7"/>
         <sourceConnection xsi:type="archimate:Connection" id="b7353dc0-19ea-43ed-afd4-c5309a073eb2" source="52336fd8-8cb3-4db0-8780-f7087eeae32a" target="036fac03-d9c6-4cdc-b802-e662e091929b" archimateRelationship="16277b52-f414-4ecc-a867-c05fe16aa077"/>
         <sourceConnection xsi:type="archimate:Connection" id="76809473-9ec3-4471-8ea8-67ad59179676" source="52336fd8-8cb3-4db0-8780-f7087eeae32a" target="82f14439-d102-477e-a53c-c71f9b92a9bc" archimateRelationship="52baa2f5-f369-48cc-9c5d-5f803b6378f7"/>
@@ -531,6 +533,7 @@ Es importante encontrar a personal con los conocimientos necesarios para cubrir 
         <sourceConnection xsi:type="archimate:Connection" id="b9152b63-aa48-4896-ac37-b2edf20ce43b" source="52336fd8-8cb3-4db0-8780-f7087eeae32a" target="6055237c-6d56-4fdc-af88-3d9150d38bcf" archimateRelationship="f2f2f929-2cce-4606-82bf-1b86fc820bbc"/>
         <sourceConnection xsi:type="archimate:Connection" id="aa6c129e-67ad-4fb2-bfaf-c8a13b9e8733" source="52336fd8-8cb3-4db0-8780-f7087eeae32a" target="70c707f5-ac1d-4ee0-ac4a-edab356bb6cf" archimateRelationship="fa2955e7-58dc-4fe8-8070-1bbe9ab890f4"/>
         <sourceConnection xsi:type="archimate:Connection" id="c181d76d-ba8d-45af-9d82-ccd0126413e3" source="52336fd8-8cb3-4db0-8780-f7087eeae32a" target="53f4f16d-b62a-4fa1-bc19-dbfc72843ca3" archimateRelationship="9d2f70ba-d938-4187-8882-806bd0bf86d2"/>
+        <sourceConnection xsi:type="archimate:Connection" id="87356944-83da-43da-b12b-6953fcb29c8f" source="52336fd8-8cb3-4db0-8780-f7087eeae32a" target="de6aa0bc-0e2d-44b0-88bc-1d9b453aac76" archimateRelationship="6510e590-8920-4013-b33f-a8f49ac18bf7"/>
         <child xsi:type="archimate:DiagramObject" id="036fac03-d9c6-4cdc-b802-e662e091929b" targetConnections="b7353dc0-19ea-43ed-afd4-c5309a073eb2 075d3679-7e4a-4276-a72f-cee462958ee8" archimateElement="4d8d5dbb-da7c-40c3-a74d-d22c3320a64e">
           <bounds x="144" y="108" width="97" height="49"/>
         </child>
@@ -575,20 +578,23 @@ Es importante encontrar a personal con los conocimientos necesarios para cubrir 
         </child>
       </child>
       <child xsi:type="archimate:DiagramObject" id="76b01447-1446-491e-886e-165be4b6e3c2" archimateElement="bf28bdb9-c76f-4846-ad10-add7b8e0baed">
-        <bounds x="60" y="204" width="120" height="55"/>
+        <bounds x="48" y="360" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="116bedf4-78af-4dd2-b618-a799134d0a03" source="76b01447-1446-491e-886e-165be4b6e3c2" target="52336fd8-8cb3-4db0-8780-f7087eeae32a" archimateRelationship="8818c332-30d7-4c73-b39e-978f711ea7a7"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="e4c38c01-af13-4a00-8979-918f5005e9f9" archimateElement="a2f5842c-fd44-4b40-9d78-3c9b49347b35">
-        <bounds x="396" y="444" width="145" height="61"/>
+        <bounds x="384" y="564" width="145" height="61"/>
         <sourceConnection xsi:type="archimate:Connection" id="2235bd20-0a2b-487b-bd4a-8f0762f7a773" source="e4c38c01-af13-4a00-8979-918f5005e9f9" target="0c0905ef-fef5-4c72-94ec-78d19e9be54b" archimateRelationship="e76198ff-48da-4ba1-8015-34d4d6e8f9e8"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="92c003c6-deb1-4157-bbf3-35e6da3c37a9" archimateElement="e9005d68-79f6-4bd3-b17c-5fadea3da9c2">
-        <bounds x="816" y="432" width="145" height="61"/>
+        <bounds x="804" y="564" width="145" height="61"/>
         <sourceConnection xsi:type="archimate:Connection" id="1be50011-8795-4ef4-ba0e-7b84857e5b38" source="92c003c6-deb1-4157-bbf3-35e6da3c37a9" target="82f14439-d102-477e-a53c-c71f9b92a9bc" archimateRelationship="e162eaf1-7606-4e95-9225-ad9649864a21"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="15125606-bfc7-4900-bf23-089621aa473a" archimateElement="8eed3999-8cc6-4f9a-b972-356e3060c811">
-        <bounds x="612" y="480" width="145" height="61"/>
+        <bounds x="600" y="600" width="145" height="61"/>
         <sourceConnection xsi:type="archimate:Connection" id="3b39f0e2-f239-4435-9df1-690ed9069442" source="15125606-bfc7-4900-bf23-089621aa473a" target="52336fd8-8cb3-4db0-8780-f7087eeae32a" archimateRelationship="3af97d02-df93-49a8-8f04-8ef3b5139573"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="de6aa0bc-0e2d-44b0-88bc-1d9b453aac76" targetConnections="87356944-83da-43da-b12b-6953fcb29c8f" archimateElement="f8208197-592e-4349-a664-9034f0b0422b">
+        <bounds x="612" y="36" width="144" height="72"/>
       </child>
     </element>
   </folder>
